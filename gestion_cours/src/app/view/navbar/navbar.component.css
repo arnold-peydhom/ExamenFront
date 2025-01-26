@@ -1,0 +1,12 @@
+.hometext{
+  text-align: center;
+}
+.homediv{
+  width: 50%;
+  justify-content: center;
+  display: block;
+  position: relative;
+  left: 25%;
+  top:250px;
+  margin-top: -3%;
+}

@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { CourseCardComponent } from './course-card/course-card.component';
 import { CourseDetailsComponent } from './course-card/course-details/course-details.component';
 import { CourseComponent } from './service/course/course.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 
 
@@ -12,7 +13,8 @@ import { CourseComponent } from './service/course/course.component';
     HomeComponent,
     CourseCardComponent,
     CourseDetailsComponent,
-    CourseComponent
+    CourseComponent,
+    AddCourseComponent
   ],
   imports: [
     CommonModule
@@ -20,7 +22,8 @@ import { CourseComponent } from './service/course/course.component';
   exports: [
     HomeComponent,
     CourseCardComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    AddCourseComponent,
   ]
 })
 export class CourseModule { }
