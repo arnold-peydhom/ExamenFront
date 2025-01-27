@@ -1,0 +1,23 @@
+.title{
+  text-align: center;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+}
+#btn{
+  margin-left: 2%;
+}
+.form-group{
+  margin-top: 1%;
+}
+.container{
+  display: block;
+  position: relative;
+  top:450px;
+  margin-top: -21.6%;
+}
+#btncard{
+  width: 250px;
+  display: block;
+  position: relative;
+  left: 42%;
+}

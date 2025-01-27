@@ -5,7 +5,7 @@ import { CourseCardComponent } from './course-card/course-card.component';
 import { CourseDetailsComponent } from './course-card/course-details/course-details.component';
 import { CourseComponent } from './service/course/course.component';
 import { AddCourseComponent } from './add-course/add-course.component';
-
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -17,7 +17,10 @@ import { AddCourseComponent } from './add-course/add-course.component';
     AddCourseComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forRoot([
+      { path: "course-detail", component:CourseDetailsComponent},
+    ])
   ],
   exports: [
     HomeComponent,
