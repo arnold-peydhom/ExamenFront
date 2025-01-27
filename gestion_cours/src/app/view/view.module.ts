@@ -7,6 +7,7 @@ import { HomeComponent } from '../course/home/home.component';
 import { CourseCardComponent } from '../course/course-card/course-card.component';
 import { CourseDetailsComponent } from '../course/course-card/course-details/course-details.component';
 import { AddCourseComponent } from '../course/add-course/add-course.component';
+import { AuthComponent } from '../auth/auth/auth.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AddCourseComponent } from '../course/add-course/add-course.component';
       { path: "course-card", component:CourseCardComponent},
       { path: "add-course", component:AddCourseComponent},
       { path: "course-detail", component:CourseDetailsComponent},
+      { path: "auth", component:AuthComponent},
     ]),
   ],
   exports: [

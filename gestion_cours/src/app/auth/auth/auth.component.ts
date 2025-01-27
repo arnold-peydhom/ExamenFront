@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AuthComponent {
 
+  constructor() { }
+
+  genericMessage(){
+    return alert("Fonctionnalité disponible plutard!😉");
+  }
 }

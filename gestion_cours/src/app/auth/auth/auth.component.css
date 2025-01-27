@@ -1,0 +1,26 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+#login{
+  width: 75%;
+  position: relative;
+  top:550px;
+  margin-top: -35.8%;
+}
+#signin{
+  width: 100%;
+  border: none;
+}
+#google{
+  width: 100%;
+  border: none;
+}
+#twitter{
+  width: 100%;
+  margin-top: 2%;
+  border: none;
+}

@@ -20,6 +20,7 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     RouterModule.forRoot([
       { path: "course-detail", component:CourseDetailsComponent},
+      { path: "course-card", component:CourseCardComponent}
     ])
   ],
   exports: [
