@@ -1,0 +1,28 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "titre": "sdfsdf",
+      "description": "dfsdfsd",
+      "duree": "02:01:00"
+    },
+    {
+      "id": "2",
+      "titre": "sdfsdf",
+      "description": "dfsdfsd",
+      "duree": "02:01:00"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "arnold peydhom",
+      "password": "skjdhfkjshf889"
+    },
+    {
+      "id": "2",
+      "username": "Akhraf boukher",
+      "password": "dfiiodfi8943"
+    }
+  ]
+}
