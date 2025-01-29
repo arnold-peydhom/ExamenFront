@@ -20,7 +20,7 @@ import { CourseModule } from './course/course.module';
     CourseModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
   ],
   bootstrap: [AppComponent]
 })

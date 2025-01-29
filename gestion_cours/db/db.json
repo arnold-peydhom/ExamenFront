@@ -23,12 +23,14 @@
     {
       "id": "1",
       "username": "arnold peydhom",
-      "password": "skjdhfkjshf889"
+      "password": "skjdhfkjshf889",
+      "token": "fake-jwt-token-12345"
     },
     {
       "id": "2",
-      "username": "Akhraf boukher",
-      "password": "dfiiodfi8943"
+      "username": "Akram BOUKHERS",
+      "password": "dfiiodfi8943",
+      "token": "fake-jwt-token-67890"
     }
   ]
 }
