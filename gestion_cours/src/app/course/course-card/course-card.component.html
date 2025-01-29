@@ -7,7 +7,7 @@
         <h5 class="card-title">Intitulé: {{courseCard.titre}}</h5>
         <p class="card-text">description: {{courseCard.description}}</p>
         <p class="card-text">Durée: {{courseCard.duree}}</p>
-        <button class="btn btn-primary" id="command" routerLink="/course-detail">Update <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+        <button class="btn btn-primary" id="command" [routerLink]="['/course-detail', courseCard.id]">Update <i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
         <button class="btn btn-danger" id="command" (click)="deleteCourse(courseCard.id)">Delete <i class="fa fa-trash-o" aria-hidden="true"></i></button>
       </div>
     </div>

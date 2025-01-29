@@ -6,6 +6,7 @@ import { CourseDetailsComponent } from './course-card/course-details/course-deta
 import { AddCourseComponent } from './add-course/add-course.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -18,8 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     CommonModule,
     HttpClientModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([
-      { path: "course-detail", component:CourseDetailsComponent},
+      { path: "course-detail/:idcourse", component:CourseDetailsComponent},
       { path: "course-card", component:CourseCardComponent}
     ])
   ],

@@ -9,6 +9,7 @@ import { Course } from '../models/course';
 export class CourseService {
 
   private courseUrl = 'http://localhost:3000/courses';
+  private getCoursByIdUrl = 'http://localhost:3000/courses/:id';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -16,19 +17,20 @@ export class CourseService {
     return this.httpClient.get<Course[]>(`${this.courseUrl}`);
   }
 
-  // getCourseById(id: number): Observable<Course> {
-  //   return this.httpClient.get<Course>(`${this.courseUrl}?id=${id}`);
-  // }
+  getCourseById(id: number): Observable<Course> {
+    return this.httpClient.get<Course>(`${this.getCoursByIdUrl}?id=${id}`);
+  }
 
-  // addCourse(course: Course): Observable<any> {
-  //   return this.httpClient.post<Course>(this.courseUrl, course);
-  // }
+  addCourse(course: Course): Observable<Course> {
+    return this.httpClient.post<Course>(this.courseUrl, course);
+  }
 
-  // updateCourse(id: number, course: Course): Observable<Course> {
-  //   return this.httpClient.put<Course>(`${this.courseUrl}/${id}`, course);
-  // }
+  updateCourse(course: Course): Observable<Course> {
+    return this.httpClient.put<Course>(this.courseUrl, course);
+  }
 
   deleteCourse(id: number): Observable<boolean> {
     return this.httpClient.delete<boolean>(`${this.courseUrl}/${id}`);
   }
 }
+

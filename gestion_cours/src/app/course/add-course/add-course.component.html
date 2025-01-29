@@ -1,19 +1,21 @@
-<form class="container">
+<form class="container" [formGroup]="courseForm" (ngSubmit)="addCourse()">
   <h3 class="title">Ajouter un cours</h3>
   <div class="form-group">
     <label for="formGroupExampleInput">Titre</label>
-    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input"
+      formControlName="titre">
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput2">Description</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" formControlName="description"></textarea>
   </div>
-<div class="form-group">
-  <label for="formGroupExampleInput2">Durée</label>
-  <input type="time" class="form-control" id="formGroupExampleInput2" placeholder="Another input">
-</div>
-<div class="form-group" id="btncard">
-  <button class="btn btn-danger" id="btn">Annuler <i class="fa fa-ban" aria-hidden="true"></i></button>
-  <button class="btn btn-success" id="btn">Valider <i class="fa fa-check" aria-hidden="true"></i></button>
-</div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Durée</label>
+    <input type="time" class="form-control" id="formGroupExampleInput2" placeholder="Another input"
+      formControlName="duree">
+  </div>
+  <div class="form-group" id="btncard">
+    <button type="button" class="btn btn-danger" id="btn" (click)="this.initForm()">Annuler <i class="fa fa-ban" aria-hidden="true"></i></button>
+    <button type="submit" class="btn btn-success" id="btn">Valider <i class="fa fa-check" aria-hidden="true"></i></button>
+  </div>
 </form>

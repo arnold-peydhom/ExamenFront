@@ -24,11 +24,6 @@ export class CourseCardComponent implements OnInit {
     });
   }
 
-  // // addPost(): void {
-  // //   this.courseCardService.addCourse(this.courseCardService.getCourse());
-  // //   }
-  // // }
-
   deleteCourse(id: number): void {
     this.courseCard.deleteCourse(id).subscribe();
     this.loadCourses();
