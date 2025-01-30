@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AuthComponent } from './auth/auth.component';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from '../course/home/home.component';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { AuthGuard } from './guard/auth.guard';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -19,15 +19,16 @@ import { register } from 'module';
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
-      { path: "home", component:HomeComponent},
       { path: "auth", component:AuthComponent},
       { path: "register", component:RegisterComponent},
       { path: "home", component:HomeComponent, canActivate: [AuthGuard]}
     ])
   ],
   exports: [
-    AuthComponent
+    AuthComponent,
+    RegisterComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

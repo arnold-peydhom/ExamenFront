@@ -21,16 +21,14 @@
   ],
   "users": [
     {
-      "id": "1",
-      "username": "arnold peydhom",
-      "password": "skjdhfkjshf889",
-      "token": "fake-jwt-token-12345"
+      "id": "b9b0",
+      "username": "arnold",
+      "password": "$2a$10$C15WJxQ3.xy9ddyPntjpue.SJvbV1QK.1aP7ziF3O8uTn.//njChW"
     },
     {
-      "id": "2",
-      "username": "Akram BOUKHERS",
-      "password": "dfiiodfi8943",
-      "token": "fake-jwt-token-67890"
+      "id": "c701",
+      "username": "landry",
+      "password": "$2a$10$i067NcqUnDIZmTVSUzRzGumnJunXBlj/R5rDywnmT6h/H7wkwqfUS"
     }
   ]
 }

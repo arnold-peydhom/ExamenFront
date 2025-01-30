@@ -41,4 +41,13 @@ export class AuthService {
   getToken(): string | null {
     return localStorage.getItem(this.tokenKey);
   }
+
+  addUser(username: string, password: string): Observable<any> {
+    const saltRounds = 10; // Niveau de sécurité du hachage
+    const hashedPassword = bcrypt.hashSync(password, saltRounds); // Hachage synchrone
+
+    const newUser = { username, password: hashedPassword };
+
+    return this.http.post<any>(this.apiUrl, newUser); // Envoie l'utilisateur au JSON Server
+  }
 }
