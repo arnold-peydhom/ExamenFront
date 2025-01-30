@@ -29,8 +29,10 @@ export class AuthComponent implements OnInit {
       this.authService.login(username, password).subscribe(isAuthenticated => {
         if (isAuthenticated) {
           this.router.navigate(['/home']);
+          alert('Content de vous revoir ✅');
         } else {
-          alert('Identifiants incorrects !');
+          alert('Identifiants incorrects 😑: Username ou password incorrect !');
+          this.authForm.reset();
         }
       });
     }

@@ -17,11 +17,13 @@ import { AuthComponent } from '../auth/auth/auth.component';
   imports: [
     CommonModule,
     RouterModule.forRoot([
-      { path: "home", component:HomeComponent},
-      { path: "course-card", component:CourseCardComponent},
-      { path: "add-course", component:AddCourseComponent},
-      { path: "course-detail", component:CourseDetailsComponent},
-      { path: "auth", component:AuthComponent},
+      { path: "", component: AuthComponent },
+      { path: "**", component: AuthComponent },
+      { path: "home", component: HomeComponent },
+      { path: "course-card", component: CourseCardComponent },
+      { path: "add-course", component: AddCourseComponent },
+      { path: "course-detail", component: CourseDetailsComponent },
+      { path: "auth", component: AuthComponent },
     ]),
   ],
   exports: [

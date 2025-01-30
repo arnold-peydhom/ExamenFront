@@ -5,11 +5,11 @@ flex: 1;
 height: 1px;
 background: #eee;
 }
-#login{
+#register{
   width: 75%;
   position: relative;
   top:550px;
-  margin-top: -35.8%;
+  margin-top: -30%;
 }
 #signin{
   width: 100%;

@@ -7,10 +7,13 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { AuthGuard } from './guard/auth.guard';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { RegisterComponent } from './register/register.component';
+import { register } from 'module';
 
 @NgModule({
   declarations: [
-    AuthComponent
+    AuthComponent,
+    RegisterComponent
   ],
   imports: [
     CommonModule,
@@ -19,6 +22,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
     RouterModule.forRoot([
       { path: "home", component:HomeComponent},
       { path: "auth", component:AuthComponent},
+      { path: "register", component:RegisterComponent},
       { path: "home", component:HomeComponent, canActivate: [AuthGuard]}
     ])
   ],
