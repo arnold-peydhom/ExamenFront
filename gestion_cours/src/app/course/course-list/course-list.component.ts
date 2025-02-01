@@ -4,11 +4,11 @@ import { Course } from '../models/course';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-course-card',
-  templateUrl: './course-card.component.html',
-  styleUrl: './course-card.component.css'
+  selector: 'app-course-list',
+  templateUrl: './course-List.component.html',
+  styleUrl: './course-List.component.css'
 })
-export class CourseCardComponent implements OnInit {
+export class CourseListComponent implements OnInit {
 
   constructor(private router: Router, private courseCard:CourseService) { }
 

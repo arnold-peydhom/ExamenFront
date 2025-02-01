@@ -11,18 +11,21 @@ import { Course } from '../models/course';
   styleUrl: './course-details.component.css'
 })
 export class CourseDetailsComponent implements OnInit {
-
   detailForm!: FormGroup;
   courseUpdate!: Course;
 
-  constructor(private fb: FormBuilder, private coursedetailservice: CourseService, private route: Router, private activateRoute: ActivatedRoute) { }
+  constructor(
+    private fb: FormBuilder,
+    private coursedetailservice: CourseService,
+    private route: Router,
+    private activateRoute: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
     this.initForm();
-
-    var idcourse = this.activateRoute.snapshot.paramMap.get('idcourse');
-    if (idcourse) {
-      this.getCourseById(+idcourse);
+    const id = this.activateRoute.snapshot.paramMap.get('id'); // Ici, on prend 'id' au lieu de 'idcourse'
+    if (id) {
+      this.getCourseById(+id);  // Conversion en number
     }
   }
 
@@ -31,40 +34,42 @@ export class CourseDetailsComponent implements OnInit {
       titre: ['', Validators.required],
       description: ['', Validators.required],
       duree: ['', Validators.required],
-    })
+    });
   }
 
-  getCourseById(idcourse: number): void {
-    this.coursedetailservice.getCourseById(idcourse).subscribe((x) => {
-      this.courseUpdate = x;
-      console.log("values",this.courseUpdate);
+  getCourseById(id: number): void {
+    this.coursedetailservice.getCourseById(id).subscribe((course) => {
+      console.log('Données du cours récupérées :', course);
+      this.courseUpdate = course;
+      console.log("values", this.courseUpdate);
       this.setFormItems();
-    })
+    });
   }
 
-  setFormItems():void{
-    if(this.courseUpdate){
-      console.log("course update", this.courseUpdate);
-      this.detailForm.setValue({
+  setFormItems(): void {
+    if (this.courseUpdate) {
+      console.log('Données du cours à remplir dans le formulaire :', this.courseUpdate);
+      this.detailForm.patchValue({
         titre: this.courseUpdate.titre,
         description: this.courseUpdate.description,
-        duree: this.courseUpdate.duree
+        duree: this.courseUpdate.duree,
       });
+
+      // Vérifier l'état du formulaire après le remplissage
+      console.log('Formulaire après patchValue :', this.detailForm.value);  // Devrait afficher les valeurs mises à jour
     }
   }
 
   updateCourse(): void {
-    var idcourse = this.activateRoute.snapshot.paramMap.get('idcourse');
-    const form = this.detailForm.value as Course;
-    if (idcourse != null) {
-      form.id = +idcourse;
-      this.coursedetailservice.updateCourse(form).subscribe();
-      this.getResponse();
-    } else { }
-  }
+    const id = this.activateRoute.snapshot.paramMap.get('id'); // Utilisation de 'id' ici aussi
 
-  getResponse(): void {
-    this.route.navigateByUrl("/course-card");
-    return alert("Cour modifié avec success ✅");
+    if (id) {
+      const updatedCourse: Course = { ...this.detailForm.value, id: +id }; // Mise à jour avec 'id'
+
+      this.coursedetailservice.updateCourse(updatedCourse).subscribe(() => {
+        alert('Cours mis à jour avec succès !');
+        this.route.navigate(['/course-list']); // Redirection après mise à jour
+      });
+    }
   }
 }

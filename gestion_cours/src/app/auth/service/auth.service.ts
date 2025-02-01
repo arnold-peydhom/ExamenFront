@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
 import * as bcrypt from 'bcryptjs';
+import { Router } from '@angular/router';
 
 
 @Injectable({

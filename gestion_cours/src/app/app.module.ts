@@ -7,7 +7,6 @@ import { AuthModule } from './auth/auth.module';
 import { CourseModule } from './course/course.module';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -15,13 +14,12 @@ import { HomeComponent } from './components/home/home.component';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    CourseModule,
+    CourseModule
   ],
   providers: [
     provideClientHydration(),

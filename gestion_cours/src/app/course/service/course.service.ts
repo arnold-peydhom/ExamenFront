@@ -9,7 +9,7 @@ import { Course } from '../models/course';
 export class CourseService {
 
   private courseUrl = 'http://localhost:3000/courses';
-  private getCoursByIdUrl = 'http://localhost:3000/courses/:id';
+  //private getCoursByIdUrl = 'http://localhost:3000/courses/id';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class CourseService {
   }
 
   getCourseById(id: number): Observable<Course> {
-    return this.httpClient.get<Course>(`${this.getCoursByIdUrl}?id=${id}`);
+    return this.httpClient.get<Course>(`${this.courseUrl}?id=${id}`);
   }
 
   addCourse(course: Course): Observable<Course> {

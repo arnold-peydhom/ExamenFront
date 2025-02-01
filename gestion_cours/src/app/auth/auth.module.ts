@@ -6,11 +6,14 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './interceptor/auth.interceptor';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { AuthGuard } from './guard/auth.guard';
 
 @NgModule({
   declarations: [
     AuthComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule,
@@ -20,11 +23,13 @@ import { RegisterComponent } from './register/register.component';
     RouterModule.forChild([
       { path: "", component:AuthComponent},
       { path: "register", component:RegisterComponent},
+      { path: "home", component: HomeComponent,canActivate: [AuthGuard]},
     ])
   ],
   exports: [
     AuthComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }

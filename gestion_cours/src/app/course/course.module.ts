@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CourseCardComponent } from './course-card/course-card.component';
+import { CourseListComponent } from './course-list/course-list.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,7 +10,7 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
 
 @NgModule({
   declarations: [
-    CourseCardComponent,
+    CourseListComponent,
     CourseDetailsComponent,
     AddCourseComponent
   ],
@@ -19,15 +19,15 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forChild([
-      { path: "course-detail/:idcourse", component:CourseDetailsComponent},
-      { path: "course-card", component:CourseCardComponent},
+      { path: "course-detail/:id", component: CourseDetailsComponent },
+      { path: "course-list", component: CourseListComponent },
       { path: "add-course", component: AddCourseComponent },
     ])
   ],
   exports: [
-    CourseCardComponent,
-    CourseDetailsComponent,
     AddCourseComponent,
+    CourseDetailsComponent,
+    CourseListComponent
   ]
 })
 export class CourseModule { }
